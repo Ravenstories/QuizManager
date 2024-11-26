@@ -1,32 +1,69 @@
-// loadComponents.js
 document.addEventListener("DOMContentLoaded", () => {
-    const appContainer = document.getElementById("app");
-  
-    function loadPage(page) {
-      fetch(`frontend/pages/${page}/${page}.html`)
-        .then(response => response.text())
-        .then(data => {
-          appContainer.innerHTML = data;
-          if (page === 'start') {
-            import(`./pages/Start/start.js`).then(module => {
-              module.init();  // Assuming start.js exports an init function to set up page functionality
-            });
-          }
-        });
-    }
-  
-    // Example of setting the default page to start.html
-    loadPage("Start");
-  
-    // Add event listeners for navigation links
-    document.querySelectorAll("[data-link]").forEach(link => {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        const page = link.getAttribute("data-link");
-        loadPage(page);
+  const appContainer = document.getElementById("app");
+
+  function loadComponent(component, target) {
+    fetch(`frontend/components/${component}.html`)
+      .then(response => response.text())
+      .then(data => {
+        document.querySelector(target).innerHTML = data;
       });
-    });
+  }
+
+  // Load header and footer components
+  loadComponent("header", "header");
+  loadComponent("footer", "footer");
+/*
+  function loadPage(page) {
+    fetch(`frontend/pages/${page}/${page}.html`)
+      .then(response => response.text())
+      .then(data => {
+        appContainer.innerHTML = data;
+        if (page.toLowerCase() === 'start') {
+          import(`./pages/Start/start.js`).then(module => {
+            module.init();  // Assuming start.js exports an init function to set up page functionality
+          });
+        }
+      });
+  }*/
+      function loadPage(page) {
+        // Convert the page name to lowercase for consistency
+        const lowercasePage = page.toLowerCase();
+        console.log(`Loading page: ${lowercasePage}`); // Log to see which page is being requested
+    
+        // Fetch the page HTML content
+        fetch(`frontend/pages/${lowercasePage}/${lowercasePage}.html`)
+          .then(response => response.text())
+          .then(data => {
+            appContainer.innerHTML = data;
+    
+            // Corrected path for importing JavaScript file
+            if (lowercasePage === 'start') {
+              console.log(`Importing module: ./pages/${lowercasePage}/${lowercasePage}.js`);
+              import(`/frontend/pages/${lowercasePage}/${lowercasePage}.js`)
+                .then(module => {
+                  module.init();  // Assuming start.js exports an init function to set up page functionality
+                })
+                .catch(err => console.error('Error loading script:', err));
+            }
+          })
+          .catch(err => console.error('Error loading page HTML:', err));
+      }
+      
+
+
+  // Example of setting the default page to start.html
+  loadPage("Start");
+
+  // Add event listeners for navigation links
+  document.addEventListener("click", e => {
+    if (e.target.matches("[data-link]")) {
+      e.preventDefault();
+      const page = e.target.getAttribute("data-link");
+      loadPage(page);
+    }
   });
+});
+
   
 
 /** Old version of loadComponents.js

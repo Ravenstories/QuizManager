@@ -1,6 +1,5 @@
-// start.js
-
-// Event listener to start the game
-document.getElementById('start-game-btn').addEventListener('click', () => {
-    loadComponent('kingdomCreation');  // Redirect to the kingdom creation screen
-});
+export function init() {
+    console.log("Start page initialized successfully");
+    // You can add more initialization code here as needed for the start page
+  }
+  
