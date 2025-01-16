@@ -51,8 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
       
 
 
-  // Example of setting the default page to start.html
-  loadPage("Start");
+  // Example of setting the default page to home.html
+  loadPage("Home");
 
   // Add event listeners for navigation links
   document.addEventListener("click", e => {
