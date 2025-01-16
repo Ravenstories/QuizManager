@@ -23,3 +23,7 @@ h1 {
 .btn:hover {
     transform: scale(1.05);
 }
+
+.backgroundimg {
+    background-image: url("../frontend/img/background.jpg");
+}
