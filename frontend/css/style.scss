@@ -1,0 +1,30 @@
+
+$font-family-base: "Playfair Display", serif;
+
+.navbar {
+    font-family: "Lato", sans-serif;
+    border-bottom: 1px solid #ddd;
+}
+
+.fade-border {
+    border-top: 1px solid #ddd;
+    padding: 10px;
+}
+
+h1 {
+    font-family: "PLayfair Display", serif;
+    font-size: 3rem;
+    color: #343a40;
+}
+
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.backgroundimg {
+    background-image: url("../frontend/img/background.jpg");
+}
