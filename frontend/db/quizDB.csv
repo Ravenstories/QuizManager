@@ -1,0 +1,7 @@
+Category ID,Category Name,Quiz ID,Quiz Name,Question ID,Question Text,Answer ID,Answer Text,Is Correct
+1,Science,101,Physics Basics,1001,What is the speed of light?,10001,299.792 km/s,TRUE
+1,Science,101,Physics Basics,1001,What is the speed of light?,10002,150.000 km/s,FALSE
+1,Science,101,Physics Basics,1002,What is the unit of force?,10003,Newton,TRUE
+1,Science,101,Physics Basics,1002,What is the unit of force?,10004,Joule,FALSE
+2,History,201,World Wars,2001,Who started World War I?,20001,Gavrilo Princip,TRUE
+2,History,201,World Wars,2001,Who started World War I?,20002,Adolf Hitler,FALSE

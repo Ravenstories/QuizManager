@@ -1,0 +1,9 @@
+<h1>Select a Quiz</h1>
+<div id="quizSelectionContainer"></div>
+
+
+<script>
+    const categoryLoader = new QuizCategoryLoader('categories.csv');
+    const selectionPage = new QuizSelectionPage(categoryLoader);
+    selectionPage.render();
+</script>
