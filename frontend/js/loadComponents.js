@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function loadPage(page) {
     const lowercasePage = page.toLowerCase();
     console.log(`Loading page: ${lowercasePage}`);
-
+  
     fetch(`frontend/pages/${lowercasePage}/${lowercasePage}.html`)
       .then(response => response.text())
       .then(async data => {
@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
           const module = await import(`/frontend/pages/${lowercasePage}/${lowercasePage}.js`);
           if (module.init) {
             module.init();
+          } else {
+            console.warn(`No init function found for page ${lowercasePage}`);
           }
         } catch (err) {
           console.error(`Error importing module for page ${lowercasePage}:`, err);
