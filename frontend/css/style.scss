@@ -1,4 +1,9 @@
 
+@import "../node_modules/bootstrap/scss/functions";
+
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
 //colors
 $color-accent: #FFA62B;
 $color-primary: #16697A;
@@ -27,7 +32,7 @@ $color-primary-active: darken($color-primary, 10%);
 
 
 .navbar {
-    font-family: "Lato", sans-serif;
+    font-family: "Playfair display", serif;
     border-bottom: 1px solid #ddd;
 }
 
@@ -37,10 +42,10 @@ $color-primary-active: darken($color-primary, 10%);
 }
 
 .btn {
+    font-family: $font-primary;
+    color: $color-primary;
     padding: 12px 16px;
-    font-size: 16px;
     border-radius: 4px;
-    cursor: pointer;
 }
 
 .backgroundimg {
