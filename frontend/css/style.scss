@@ -58,3 +58,8 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 .backgroundimg {
     background-image: url("../img/background.jpg");
 }
+
+.testClass {
+    color: #000;
+    background-color: #000;
+}
