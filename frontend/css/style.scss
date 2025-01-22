@@ -1,5 +1,9 @@
 
-$font-family-base: "Playfair Display", serif;
+//colors
+$color-accent: #FFA62B;
+$color-primary: #16697A;
+$color-secondary: #82C0CC;
+
 
 .navbar {
     font-family: "Lato", sans-serif;
@@ -18,7 +22,10 @@ h1 {
 }
 
 .btn {
-    transition: all 0.3s ease;
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .btn:hover {
