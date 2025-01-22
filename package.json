@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "http-server": "^14.1.1",
-    "sass": "^1.83.4"
+    "sass": "^1.83.4",
+    "scss": "^0.2.4"
   },
   "scripts": {
     "sass": "sass src/styles.scss dist/styles.css"
