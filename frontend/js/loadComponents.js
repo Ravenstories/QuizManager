@@ -12,46 +12,32 @@ document.addEventListener("DOMContentLoaded", () => {
   // Load header and footer components
   loadComponent("header", "header");
   loadComponent("footer", "footer");
-/*
+
   function loadPage(page) {
-    fetch(`frontend/pages/${page}/${page}.html`)
+    // Convert the page name to lowercase for consistency
+    const lowercasePage = page //.toLowerCase();
+    console.log(`Loading page: ${lowercasePage}`); // Log to see which page is being requested
+
+    // Fetch the page HTML content
+    fetch(`frontend/pages/${lowercasePage}/${lowercasePage}.html`)
       .then(response => response.text())
       .then(data => {
         appContainer.innerHTML = data;
-        if (page.toLowerCase() === 'start') {
-          import(`./pages/Start/start.js`).then(module => {
-            module.init();  // Assuming start.js exports an init function to set up page functionality
-          });
+
+        // Corrected path for importing JavaScript file
+        if (lowercasePage === 'start') {
+          console.log(`Importing module: ./pages/${lowercasePage}/${lowercasePage}.js`);
+          import(`/frontend/pages/${lowercasePage}/${lowercasePage}.js`)
+            .then(module => {
+              module.init();  
+            })
+            .catch(err => console.error('Error loading script:', err));
         }
-      });
-  }*/
-      function loadPage(page) {
-        // Convert the page name to lowercase for consistency
-        const lowercasePage = page.toLowerCase();
-        console.log(`Loading page: ${lowercasePage}`); // Log to see which page is being requested
-    
-        // Fetch the page HTML content
-        fetch(`frontend/pages/${lowercasePage}/${lowercasePage}.html`)
-          .then(response => response.text())
-          .then(data => {
-            appContainer.innerHTML = data;
-    
-            // Corrected path for importing JavaScript file
-            if (lowercasePage === 'start') {
-              console.log(`Importing module: ./pages/${lowercasePage}/${lowercasePage}.js`);
-              import(`/frontend/pages/${lowercasePage}/${lowercasePage}.js`)
-                .then(module => {
-                  module.init();  // Assuming start.js exports an init function to set up page functionality
-                })
-                .catch(err => console.error('Error loading script:', err));
-            }
-          })
-          .catch(err => console.error('Error loading page HTML:', err));
-      }
+      })
+      .catch(err => console.error('Error loading page HTML:', err));
+  }
       
-
-
-  // Example of setting the default page to home.html
+  // Load Home as default
   loadPage("Home");
 
   // Add event listeners for navigation links
