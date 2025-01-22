@@ -1,3 +1,5 @@
+import QuizCategoryLoader from '/frontend/js/QuizCategoryLoader.js';
+
 export default class QuizSelectionPage {
     constructor(categoryLoader) {
       this.categoryLoader = categoryLoader;
@@ -46,3 +48,8 @@ export default class QuizSelectionPage {
     }
   }
   
+  export function init() {
+    const categoryLoader = new QuizCategoryLoader("frontend/db/quizDB.csv");
+    const selectionPage = new QuizSelectionPage(categoryLoader);
+    selectionPage.render();
+  }
