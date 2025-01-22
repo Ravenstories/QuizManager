@@ -1,3 +1,5 @@
+import QuizCategoryLoader from '/frontend/js/QuizCategoryLoader.js';
+
 export default class QuizSelectionPage {
     constructor(categoryLoader) {
       this.categoryLoader = categoryLoader;
