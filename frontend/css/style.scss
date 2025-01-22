@@ -1,15 +1,15 @@
+// Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
 
 
-$custom-colors: ( 
-    "contrast": #FFA62B,
-    "back": #16697A,
-    "front": #82C0CC,
-    "dark": #383939,
-    "light": #EDE7E3,
-    "white": #FCFCFC,
-);
 
-//typos
+
+// Include any default variable overrides here
+$link-decoration: none;
 $font-family-base: "Playfair Display", serif;
 $font-family-secondary: "Lato", sans-serif;
 
@@ -27,6 +27,19 @@ $spacing-base: 8px;
 $color-primary-hover: lighten($color-primary, 10%);
 $color-primary-active: darken($color-primary, 10%);
 
+// Include any default map overrides here
+$custom-colors: ( 
+    "contrast": #FFA62B,
+    "back": #16697A,
+    "front": #82C0CC,
+    "dark": #383939,
+    "light": #EDE7E3,
+    "white": #FCFCFC,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "bootstrapComponents";
 
 .navbar {
     font-family: "Playfair display", serif;
