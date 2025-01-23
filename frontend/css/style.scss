@@ -44,11 +44,6 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
     border-bottom: 1px solid #ddd;
 }
 
-.fade-border {
-    border-top: 1px solid #ddd;
-    padding: 10px;
-}
-
 .welcome {
     font-family: "Playfair Display", serif;
     font-weight: 300;
@@ -61,8 +56,4 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 .btn-primary {
     background-color: #FFA62B !important;
-}
-
-.backgroundimg {
-    background-image: url("../img/background.jpg");
 }
