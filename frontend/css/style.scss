@@ -41,11 +41,25 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 .navbar {
     font-family: "Playfair display", serif;
-    border-bottom: 1px solid #ddd;
 }
+
+.navbar-brand {
+    color: #16697A;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+	outline: none;
+	box-shadow: none;
+}
+
 
 .welcome {
     font-family: "Playfair Display", serif;
+    color:#383939;
     font-weight: bold;
     letter-spacing: -1px;
 }
