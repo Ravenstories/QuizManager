@@ -49,8 +49,12 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
     padding: 10px;
 }
 
+.welcome {
+    font-family: "Playfair Display", serif;
+}
+
 .welcome-subtitles {
-font-family: "Lato", sans-serif;
+    font-family: "Lato", sans-serif !important;
 }
 
 .btn-primary {
