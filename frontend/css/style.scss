@@ -56,10 +56,23 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 	box-shadow: none;
 }
 
+.background .overlay {
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); /* Centers the overlay */
+	z-index: 1; /* places the text on top of the image */
+	text-align: center;
+}
+
+.gradient {
+    border-radius: 15px;
+    background-repeat: repeat;
+}
 
 .welcome {
     font-family: "Playfair Display", serif;
-    color:#383939;
+    color:#FCFCFC;
     font-weight: bold;
     letter-spacing: -1px;
 }
@@ -67,6 +80,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 .welcome-subtitles {
     font-family: "Lato", sans-serif;
     font-style: italic;
+    color:#FCFCFC;
 }
 
 .btn-primary {
