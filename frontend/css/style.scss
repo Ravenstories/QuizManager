@@ -10,8 +10,6 @@
 
 // Include any default variable overrides here
 $link-decoration: none;
-$font-family-base: "Playfair Display", serif;
-$font-family-secondary: "Lato", sans-serif;
 
 $font-size-h1: 32px;
 $font-size-h2: 24px;
@@ -51,16 +49,14 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
     padding: 10px;
 }
 
+.welcome-subtitles {
+font-family: "Lato", sans-serif;
+}
+
 .btn-primary {
     background-color: #FFA62B !important;
 }
 
 .backgroundimg {
     background-image: url("../img/background.jpg");
-}
-
-.testClass {
-    color: #000;
-    background-color: #000;
-    font-size: large;
 }
