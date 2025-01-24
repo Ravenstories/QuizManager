@@ -56,6 +56,10 @@ export function init() {
           item.onclick = () => {
             answers.set(question.id, { answerId: option.id, questionText: question.text, selectedText: option.text, isCorrect: option.isCorrect });
             console.log(`Saved answer for Q${index + 1}: ${option.text}`);
+
+            // Highlight selected answer
+            Array.from(list.children).forEach(child => child.classList.remove('active')); // Remove active class from all
+            item.classList.add('active'); // Add active class to the selected
           };
           list.appendChild(item);
         });

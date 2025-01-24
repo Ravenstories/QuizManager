@@ -30,7 +30,7 @@ export default class QuizSelectionPage {
         category.quizzes.forEach(quiz => {
           const quizButton = document.createElement("button");
           quizButton.setAttribute('data-link', 'QuestionCardPage')
-          quizButton.className = "btn btn-primary w-100 mb-2";
+          quizButton.className = "btn btn-primary w-100 mb-2 text-start";
           quizButton.textContent = quiz.name;
           quizButton.onclick = () => this.selectQuiz(quiz.id);
           quizList.appendChild(quizButton);
