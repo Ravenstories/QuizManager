@@ -1,4 +1,4 @@
-import { loadPage } from '/frontend/js/loadComponents.js';
+import { loadPage } from './frontend/js/loadComponents.js';
 
 export function init() {
   const quizId = localStorage.getItem('selectedQuizId');
@@ -10,7 +10,7 @@ export function init() {
 
   console.log(`Loading questions for quiz ID: ${quizId}`);
 
-  fetch('frontend/db/quizDB.csv')
+  fetch('./frontend/db/quizDB.csv')
     .then(response => response.text())
     .then(data => {
       const rows = data.split('\n').slice(1); // Skip header row
