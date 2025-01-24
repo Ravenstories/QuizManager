@@ -19,7 +19,7 @@ export function loadPage(page) {
     .then(async html => {
       appContainer.innerHTML = html;
       try {
-        //const module = await import(`/frontend/pages/${lowercasePage}/${lowercasePage}.js`);
+        const module = await import(`/frontend/pages/${lowercasePage}/${lowercasePage}.js`);
         console.log(`Loading module for page test ${lowercasePage}`);
         if (module.init) {
           module.init(); // Initialize the page if the `init` function exists
