@@ -19,7 +19,7 @@ export function loadPage(page) {
     .then(async html => {
       appContainer.innerHTML = html;
       try {
-        const module = await import(`/QuizManager/frontend/pages/${lowercasePage}/${lowercasePage}.mjs`); // Adjusted path
+        const module = await import(`/QuizManager/frontend/pages/${lowercasePage}/${lowercasePage}.js`); // Adjusted path
         if (module.init) {
           module.init(); // Initialize the page if the `init` function exists
         }
