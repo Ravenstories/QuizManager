@@ -66,9 +66,9 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 }
 
 .background {
-    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee); /* Gradient */
+    background: linear-gradient(-45deg, #fcd59e, #82C0CC, #7ec1ce, #489FB5); /* Gradient */
     background-size: 400% 400%; /* Enlarged size for smooth animation */
-    animation: gradientBG 5s ease infinite; /* Gradient animation */
+    animation: gradientBG 10s ease infinite; /* Gradient animation */
     height: 100vh; /* Full screen height */
     display: flex; /* To align content inside if needed */
     justify-content: center;
