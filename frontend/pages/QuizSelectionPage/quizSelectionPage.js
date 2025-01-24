@@ -50,7 +50,7 @@ export default class QuizSelectionPage {
   }
   
   export function init() {
-    const categoryLoader = new QuizCategoryLoader("frontend/db/quizDB.csv");
+    const categoryLoader = new QuizCategoryLoader("./frontend/db/quizDB.csv");
     const selectionPage = new QuizSelectionPage(categoryLoader);
     selectionPage.render();
   }
