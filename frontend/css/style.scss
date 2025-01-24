@@ -65,12 +65,14 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 	text-align: center;
 }
 
-.gradient {
-    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* A softer shadow */
-    border-radius: 16px; /* More rounded corners for modernity */
+.background {
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee); /* Gradient */
+    background-size: 400% 400%; /* Enlarged size for smooth animation */
+    animation: gradientBG 5s ease infinite; /* Gradient animation */
+    height: 100vh; /* Full screen height */
+    display: flex; /* To align content inside if needed */
+    justify-content: center;
+    align-items: center;
 }
 
 @keyframes gradientBG {
