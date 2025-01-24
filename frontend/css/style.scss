@@ -18,9 +18,6 @@ $font-size-h4: 18px;
 $font-size-body: 16px;
 $font-size-caption: 14px;
 
-//spacing
-$spacing-base: 8px;
-
 //button, hover and active states
 //$color-primary-hover: lighten($color-primary, 10%);
 //$color-primary-active: darken($color-primary, 10%);
@@ -56,23 +53,30 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 	box-shadow: none;
 }
 
-.background .overlay {
-    position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%); /* Centers the overlay */
-	z-index: 1; /* places the text on top of the image */
-	text-align: center;
-}
+
 
 .background {
     background: linear-gradient(-45deg, #fcd59e, #82C0CC, #7ec1ce, #489FB5); /* Gradient */
     background-size: 400% 400%; /* Enlarged size for smooth animation */
     animation: gradientBG 10s ease infinite; /* Gradient animation */
-    height: 100vh; /* Full screen height */
-    display: flex; /* To align content inside if needed */
+    height: calc(100vh - 4rem);
+    width: calc(100vw - 4rem);
+    border-radius: 24px;
+    display: flex; 
     justify-content: center;
     align-items: center;
+    padding: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    
+    .overlay {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
 }
 
 @keyframes gradientBG {
@@ -80,6 +84,35 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+
+@media (max-width: 768px) {
+    .overlay {
+        padding: 1rem; /* Reduce padding for smaller devices */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Adjust font sizes */
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .overlay {
+        padding: 0.8rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
+
 
 .welcome {
     font-family: "Playfair Display", serif;
