@@ -1,4 +1,4 @@
-import { loadPage } from './frontend/js/loadComponents.js';
+import { loadPage } from '../../../frontend/js/loadComponents.js';
 
 export function init() {
   const quizId = localStorage.getItem('selectedQuizId');
