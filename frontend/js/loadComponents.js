@@ -1,6 +1,6 @@
 // Function to load reusable components (e.g., header, footer)
 export function loadComponent(component, targetSelector) {
-  fetch(`./frontend/components/${component}.html`)
+  fetch(`../../../frontend/components/${component}.html`)
     .then(response => response.text())
     .then(html => {
       document.querySelector(targetSelector).innerHTML = html;
@@ -14,7 +14,7 @@ export function loadPage(page) {
   const lowercasePage = page.toLowerCase();
   console.log(`Loading page: ${lowercasePage}`);
 
-  fetch(`./frontend/pages/${lowercasePage}/${lowercasePage}.html`)
+  fetch(`../../../frontend/pages/${lowercasePage}/${lowercasePage}.html`)
     .then(response => response.text())
     .then(async html => {
       appContainer.innerHTML = html;
