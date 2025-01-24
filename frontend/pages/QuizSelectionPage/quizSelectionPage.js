@@ -1,4 +1,4 @@
-import QuizCategoryLoader from '/frontend/js/quizCategoryLoader.js';
+import QuizCategoryLoader from './frontend/js/quizCategoryLoader.js';
 
 export default class QuizSelectionPage {
     constructor(categoryLoader) {
