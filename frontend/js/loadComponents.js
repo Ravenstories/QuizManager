@@ -1,6 +1,6 @@
 // Function to load reusable components (e.g., header, footer)
 export function loadComponent(component, targetSelector) {
-  fetch(`./frontend/components/${component}.html`)
+  fetch(`QuizManager/frontend/components/${component}.html`)
     .then(response => response.text())
     .then(html => {
       document.querySelector(targetSelector).innerHTML = html;
@@ -14,12 +14,12 @@ export function loadPage(page) {
   const lowercasePage = page.toLowerCase();
   console.log(`Loading page: ${lowercasePage}`);
 
-  fetch(`../../frontend/pages/${lowercasePage}/${lowercasePage}.html`)
+  fetch(`QuizManager/frontend/pages/${lowercasePage}/${lowercasePage}.html`)
     .then(response => response.text())
     .then(async html => {
       appContainer.innerHTML = html;
       try {
-        const module = await import(`../../frontend/pages/${lowercasePage}/${lowercasePage}.js`);
+        const module = await import(`QuizManager/frontend/pages/${lowercasePage}/${lowercasePage}.js`);
         console.log(`Loading module for page test ${lowercasePage}`);
         if (module.init) {
           module.init(); // Initialize the page if the `init` function exists
