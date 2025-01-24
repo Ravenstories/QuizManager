@@ -65,17 +65,18 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
     display: flex; 
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 2.5rem;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     
     .overlay {
     width: 100%;
     max-width: 600px;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 4rem 3rem;
+    background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
     border-radius: 16px;
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 }
 
