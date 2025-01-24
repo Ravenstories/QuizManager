@@ -23,16 +23,17 @@ export default class QuizSelectionPage {
         categoryButton.textContent = category.name;
   
         // Create quizzes list
-        const quizList = document.createElement("ul");
-        quizList.className = "collapse list-group";
+        const quizList = document.createElement("div");
+        quizList.className = "collapse";
         quizList.id = `category-${category.id}`;
   
         category.quizzes.forEach(quiz => {
-          const quizItem = document.createElement("li");
-          quizItem.className = "list-group-item";
-          quizItem.textContent = quiz.name;
-          quizItem.onclick = () => this.selectQuiz(quiz.id);
-          quizList.appendChild(quizItem);
+          const quizButton = document.createElement("button");
+          quizButton.setAttribute('data-link', 'QuestionCardPage')
+          quizButton.className = "btn btn-primary w-100 mb-2";
+          quizButton.textContent = quiz.name;
+          quizButton.onclick = () => this.selectQuiz(quiz.id);
+          quizList.appendChild(quizButton);
         });
   
         // Append to container
@@ -44,7 +45,7 @@ export default class QuizSelectionPage {
   
     selectQuiz(quizId) {
       console.log(`Selected quiz ID: ${quizId}`);
-      // Logic to start the quiz
+      localStorage.setItem('selectedQuizId', quizId); // Store selected quiz ID
     }
   }
   
