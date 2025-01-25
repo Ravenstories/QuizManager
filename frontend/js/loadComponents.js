@@ -14,12 +14,14 @@ export function loadPage(page) {
   const lowercasePage = page.toLowerCase();
   console.log(`Loading page: ${lowercasePage}`);
 
-  fetch(`/QuizManager/frontend/pages/${lowercasePage}/${lowercasePage}.html`) // Adjusted path
+  fetch(`./frontend/pages/${lowercasePage}/${lowercasePage}.html`)
     .then(response => response.text())
     .then(async html => {
       appContainer.innerHTML = html;
+      console.log(`Page ${lowercasePage} loaded successfully, html:`, html);
       try {
-        const module = await import(`/QuizManager/frontend/pages/${lowercasePage}/${lowercasePage}.js`); // Adjusted path
+        const module = await import(`../../frontend/pages/${lowercasePage}/${lowercasePage}.js`);
+        console.log(`Loading module for page test ${lowercasePage}, module:`, module);
         if (module.init) {
           module.init(); // Initialize the page if the `init` function exists
         }
