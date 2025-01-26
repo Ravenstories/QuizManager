@@ -47,6 +47,6 @@ export function setupNavigation() {
 export function initComponents() {
   loadComponent("header", "header"); // Load header
   loadComponent("footer", "footer"); // Load footer
-  loadPage("home"); // Load the default page (home)
+  loadPage("QuizSelectionPage"); // Load the default page (home)
   setupNavigation(); // Set up navigation handling
 }
