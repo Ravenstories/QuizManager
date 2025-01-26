@@ -14,7 +14,8 @@ export default class QuizSelectionPage {
         // Create category dropdown
         const categoryDiv = document.createElement("div");
         categoryDiv.className = "mb-3";
-  
+
+        //parent button
         const categoryButton = document.createElement("button");
         categoryButton.className = "btn btn-secondary btn-block w-100 text-start";
         categoryButton.type = "button";
@@ -26,7 +27,8 @@ export default class QuizSelectionPage {
         const quizList = document.createElement("div");
         quizList.className = "collapse";
         quizList.id = `category-${category.id}`;
-  
+
+        //Child button
         category.quizzes.forEach(quiz => {
           const quizButton = document.createElement("button");
           quizButton.setAttribute('data-link', 'QuestionCardPage')
