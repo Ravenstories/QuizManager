@@ -13,11 +13,12 @@ export function loadPage(page) {
   const appContainer = document.getElementById("app");
   console.log(`Loading page: ${page}`);
   const basePath = "/QuizManager/frontend/pages/";
+  const lowerCasePage = page.toLowerCase();
   //  fetch(`/QuizManager/frontend/pages/${page}/${page}.html`)
   fetch(`${basePath}${page}/${page}.html`)
     .then(response => {
       if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}, Path: /QuizManager/frontend/pages/${page}/${page}.html`);
+        throw new Error(`HTTP error! Status: ${response.status}, Path: /QuizManager/frontend/pages/${page}/${lowerCasePage}.html`);
       }
       return response.text();
     })
@@ -25,7 +26,7 @@ export function loadPage(page) {
       appContainer.innerHTML = html;
       console.log(`Page ${page} loaded successfully, html:`, html);
       try {
-        const module = await import(`/QuizManager/frontend/pages/${page}/${page}.js`);
+        const module = await import(`/QuizManager/frontend/pages/${page}/${lowerCasePage}.js`);
         console.log(`Module loaded for page ${page}:`, module);
         if (module.init) {
           module.init(); // Initialize the page if the `init` function exists
