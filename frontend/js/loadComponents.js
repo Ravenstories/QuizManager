@@ -16,22 +16,23 @@ export function loadPage(page) {
 
   //fetch(`./frontend/pages/${lowercasePage}/${lowercasePage}.html`)
   fetch(`./frontend/pages/${page}/${page}.html`)
-    .then(response => response.text())
-    .then(async html => {
-      appContainer.innerHTML = html;
-      /*
-      try {
-        const module = await import(`../../frontend/pages/${lowercasePage}/${lowercasePage}.js`);
-        console.log(`Loading module for page test ${lowercasePage}, module:`, module);
-        if (module.init) {
-          module.init(); // Initialize the page if the `init` function exists
-        }
-      } catch (err) {
-        console.error(`Error importing module for page ${lowercasePage}:`, err);
-      }
-      */
-    })
-    .catch(err => console.error(`Error loading page HTML for ${lowercasePage}:`, err));
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}, Path: ./frontend/pages/${page}/${page}.html`);
+    }
+    return response.text();
+  })
+  .then(async html => {
+    console.log(`HTML fetched for page ${page}:`, html);
+    appContainer.innerHTML = html;
+    try {
+      const module = await import(`../../frontend/pages/${page}/${page}.js`);
+      console.log(`Module loaded for page ${page}:`, module);
+    } catch (err) {
+      console.error(`Error loading module for page ${page}:`, err);
+    }
+  })
+  .catch(err => console.error(`Error loading page ${page}:`, err));
 }
 
 // Function to set up navigation links and handle their click events
