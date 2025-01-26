@@ -14,11 +14,13 @@ export function loadPage(page) {
   const lowercasePage = page.toLowerCase();
   console.log(`Loading page: ${lowercasePage}`);
 
-  fetch(`./frontend/pages/${lowercasePage}/${lowercasePage}.html`)
+  //fetch(`./frontend/pages/${lowercasePage}/${lowercasePage}.html`)
+  fetch(`./frontend/pages/${page}/${page}.html`)
     .then(response => response.text())
     .then(async html => {
       appContainer.innerHTML = html;
       console.log(`Page ${lowercasePage} loaded successfully, html:`, html);
+      /*
       try {
         const module = await import(`../../frontend/pages/${lowercasePage}/${lowercasePage}.js`);
         console.log(`Loading module for page test ${lowercasePage}, module:`, module);
@@ -28,6 +30,7 @@ export function loadPage(page) {
       } catch (err) {
         console.error(`Error importing module for page ${lowercasePage}:`, err);
       }
+      */
     })
     .catch(err => console.error(`Error loading page HTML for ${lowercasePage}:`, err));
 }
@@ -47,6 +50,6 @@ export function setupNavigation() {
 export function initComponents() {
   loadComponent("header", "header"); // Load header
   loadComponent("footer", "footer"); // Load footer
-  loadPage("QuizSelectionPage"); // Load the default page (home)
+  loadPage("home"); // Load the default page (home)
   setupNavigation(); // Set up navigation handling
 }
