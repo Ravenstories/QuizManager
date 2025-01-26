@@ -1,7 +1,41 @@
 Category ID,Category Name,Quiz ID,Quiz Name,Question ID,Question Text,Answer ID,Answer Text,Is Correct
-1,Science,101,Physics Basics,1001,What is the speed of light?,10001,299.792 km/s,TRUE
-1,Science,101,Physics Basics,1001,What is the speed of light?,10002,150.000 km/s,FALSE
-1,Science,101,Physics Basics,1002,What is the unit of force?,10003,Newton,TRUE
-1,Science,101,Physics Basics,1002,What is the unit of force?,10004,Joule,FALSE
-2,History,201,World Wars,2001,Who started World War I?,20001,Gavrilo Princip,TRUE
-2,History,201,World Wars,2001,Who started World War I?,20002,Adolf Hitler,FALSE
+1,Medical Basics,101,Anatomy Fundamentals,1001,What is the largest organ in the human body?,10001,Skin,TRUE
+1,Medical Basics,101,Anatomy Fundamentals,1001,What is the largest organ in the human body?,10002,Liver,FALSE
+1,Medical Basics,101,Anatomy Fundamentals,1002,What is the function of red blood cells?,10003,Oxygen transport,TRUE
+1,Medical Basics,101,Anatomy Fundamentals,1002,What is the function of red blood cells?,10004,Clotting,FALSE
+1,Medical Basics,101,Anatomy Fundamentals,1003,What is the average heart rate for adults?,10005,60-100 bpm,TRUE
+1,Medical Basics,101,Anatomy Fundamentals,1003,What is the average heart rate for adults?,10006,40-60 bpm,FALSE
+1,Medical Basics,101,Anatomy Fundamentals,1004,Which bone is also known as the collarbone?,10007,Clavicle,TRUE
+1,Medical Basics,101,Anatomy Fundamentals,1004,Which bone is also known as the collarbone?,10008,Humerus,FALSE
+1,Medical Basics,101,Anatomy Fundamentals,1005,What is the normal range of blood pressure?,10009,120/80 mmHg,TRUE
+1,Medical Basics,101,Anatomy Fundamentals,1005,What is the normal range of blood pressure?,10010,140/90 mmHg,FALSE
+1,Medical Basics,102,Pharmacology Basics,1011,What does NSAID stand for?,10011,Non-Steroidal Anti-Inflammatory Drug,TRUE
+1,Medical Basics,102,Pharmacology Basics,1011,What does NSAID stand for?,10012,Narcotic Steroid Anti-Inhibitor Drug,FALSE
+1,Medical Basics,102,Pharmacology Basics,1012,Which is a common side effect of opioids?,10013,Constipation,TRUE
+1,Medical Basics,102,Pharmacology Basics,1012,Which is a common side effect of opioids?,10014,Nausea,FALSE
+1,Medical Basics,102,Pharmacology Basics,1013,What is the antidote for an opioid overdose?,10015,Naloxone,TRUE
+1,Medical Basics,102,Pharmacology Basics,1013,What is the antidote for an opioid overdose?,10016,Atropine,FALSE
+1,Medical Basics,102,Pharmacology Basics,1014,What is the function of diuretics?,10017,Increase urine output,TRUE
+1,Medical Basics,102,Pharmacology Basics,1014,What is the function of diuretics?,10018,Lower blood sugar,FALSE
+1,Medical Basics,102,Pharmacology Basics,1015,Which vitamin is fat-soluble?,10019,Vitamin A,TRUE
+1,Medical Basics,102,Pharmacology Basics,1015,Which vitamin is fat-soluble?,10020,Vitamin C,FALSE
+2,Nursing Procedures,201,Wound Care Basics,2001,What is the first step in wound care?,20001,Hand hygiene,TRUE
+2,Nursing Procedures,201,Wound Care Basics,2001,What is the first step in wound care?,20002,Apply dressing,FALSE
+2,Nursing Procedures,201,Wound Care Basics,2002,What is used for cleaning wounds?,20003,Normal saline,TRUE
+2,Nursing Procedures,201,Wound Care Basics,2002,What is used for cleaning wounds?,20004,Alcohol,FALSE
+2,Nursing Procedures,201,Wound Care Basics,2003,What is an important factor in preventing pressure ulcers?,20005,Frequent repositioning,TRUE
+2,Nursing Procedures,201,Wound Care Basics,2003,What is an important factor in preventing pressure ulcers?,20006,Using antibiotics,FALSE
+2,Nursing Procedures,201,Wound Care Basics,2004,Which type of wound healing occurs when edges are approximated?,20007,Primary intention,TRUE
+2,Nursing Procedures,201,Wound Care Basics,2004,Which type of wound healing occurs when edges are approximated?,20008,Secondary intention,FALSE
+2,Nursing Procedures,201,Wound Care Basics,2005,What dressing is best for a moist wound?,20009,Hydrocolloid,TRUE
+2,Nursing Procedures,201,Wound Care Basics,2005,What dressing is best for a moist wound?,20010,Gauze,FALSE
+3,Patient Care,301,Elderly Patient Care,3001,What is a key factor in preventing falls in elderly patients?,30001,Proper lighting,TRUE
+3,Patient Care,301,Elderly Patient Care,3001,What is a key factor in preventing falls in elderly patients?,30002,Frequent hydration,FALSE
+3,Patient Care,301,Elderly Patient Care,3002,What is important for preventing bedsores?,30003,Frequent turning,TRUE
+3,Patient Care,301,Elderly Patient Care,3002,What is important for preventing bedsores?,30004,Increased fluid intake,FALSE
+3,Patient Care,301,Elderly Patient Care,3003,What is a common sign of dehydration in elderly patients?,30005,Dry mouth,TRUE
+3,Patient Care,301,Elderly Patient Care,3003,What is a common sign of dehydration in elderly patients?,30006,Increased appetite,FALSE
+3,Patient Care,301,Elderly Patient Care,3004,Which symptom may indicate early dementia?,30007,Memory loss,TRUE
+3,Patient Care,301,Elderly Patient Care,3004,Which symptom may indicate early dementia?,30008,Fever,FALSE
+3,Patient Care,301,Elderly Patient Care,3005,What is important when communicating with elderly patients?,30009,Clear and simple language,TRUE
+3,Patient Care,301,Elderly Patient Care,3005,What is important when communicating with elderly patients?,30010,Rapid speech,FALSE
