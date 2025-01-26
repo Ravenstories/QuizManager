@@ -89,7 +89,7 @@ export function init() {
           if (currentIndex === questions.length - 1) {
             console.log('Quiz Complete:', Object.fromEntries(answers));
             localStorage.setItem('quizAnswers', JSON.stringify(Object.fromEntries(answers)));
-            loadPage('ScorecardPage');
+            loadPage('ScoreCardPage');
           } else {
             currentIndex++;
             renderQuestion(currentIndex);
