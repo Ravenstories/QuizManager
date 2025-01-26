@@ -12,14 +12,13 @@ export function loadComponent(component, targetSelector) {
 export function loadPage(page) {
   const appContainer = document.getElementById("app");
   const lowercasePage = page.toLowerCase();
-  console.log(`Loading page: ${lowercasePage}`);
+  console.log(`Loading page: ${page}`);
 
   //fetch(`./frontend/pages/${lowercasePage}/${lowercasePage}.html`)
   fetch(`./frontend/pages/${page}/${page}.html`)
     .then(response => response.text())
     .then(async html => {
       appContainer.innerHTML = html;
-      console.log(`Page ${lowercasePage} loaded successfully, html:`, html);
       /*
       try {
         const module = await import(`../../frontend/pages/${lowercasePage}/${lowercasePage}.js`);
