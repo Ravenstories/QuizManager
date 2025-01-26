@@ -15,7 +15,7 @@ export function loadPage(page) {
   const basePath = "/QuizManager/frontend/pages/";
   const lowerCasePage = page.toLowerCase();
   //  fetch(`/QuizManager/frontend/pages/${page}/${page}.html`)
-  fetch(`${basePath}${page}/${page}.html`)
+  fetch(`${basePath}${page}/${lowerCasePage}.html`)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}, Path: /QuizManager/frontend/pages/${page}/${lowerCasePage}.html`);
