@@ -11,29 +11,32 @@ export function loadComponent(component, targetSelector) {
 // Function to load page content and initialize its JS module
 export function loadPage(page) {
   const appContainer = document.getElementById("app");
-  const lowercasePage = page.toLowerCase();
   console.log(`Loading page: ${page}`);
-
-  //fetch(`./frontend/pages/${lowercasePage}/${lowercasePage}.html`)
-  fetch(`./frontend/pages/${page}/${page}.html`)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}, Path: ./frontend/pages/${page}/${page}.html`);
-    }
-    return response.text();
-  })
-  .then(async html => {
-    console.log(`HTML fetched for page ${page}:`, html);
-    appContainer.innerHTML = html;
-    try {
-      const module = await import(`../../frontend/pages/${page}/${page}.js`);
-      console.log(`Module loaded for page ${page}:`, module);
-    } catch (err) {
-      console.error(`Error loading module for page ${page}:`, err);
-    }
-  })
-  .catch(err => console.error(`Error loading page ${page}:`, err));
+  const basePath = "/QuizManager/frontend/pages/";
+  //  fetch(`/QuizManager/frontend/pages/${page}/${page}.html`)
+  fetch(`${basePath}${page}/${page}.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}, Path: /QuizManager/frontend/pages/${page}/${page}.html`);
+      }
+      return response.text();
+    })
+    .then(async html => {
+      appContainer.innerHTML = html;
+      console.log(`Page ${page} loaded successfully, html:`, html);
+      try {
+        const module = await import(`/QuizManager/frontend/pages/${page}/${page}.js`);
+        console.log(`Module loaded for page ${page}:`, module);
+        if (module.init) {
+          module.init(); // Initialize the page if the `init` function exists
+        }
+      } catch (err) {
+        console.error(`Error loading module for page ${page}:`, err);
+      }
+    })
+    .catch(err => console.error(`Error loading page ${page}:`, err));
 }
+
 
 // Function to set up navigation links and handle their click events
 export function setupNavigation() {
